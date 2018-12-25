@@ -76,16 +76,26 @@ extension CameraViewController {
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
         
+        let cameraButton = CameraButton()
+        view.addSubview(cameraButton)
+        cameraButton.translatesAutoresizingMaskIntoConstraints = false
+        cameraButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        cameraButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        cameraButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
+        cameraButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50).isActive = true
+        cameraButton.isUserInteractionEnabled = true
+        cameraButton.onClick = { self.takePhoto() }
+        
         view.addSubview(blur)
         blur.translatesAutoresizingMaskIntoConstraints = false
         bottomConstraint = blur.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
         bottomConstraint.isActive = true
         blur.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8).isActive = true
-        blur.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -8).isActive = true
+        blur.rightAnchor.constraint(equalTo: cameraButton.leftAnchor, constant: -16).isActive = true
         blur.heightAnchor.constraint(equalToConstant: 40).isActive = true
         blur.clipsToBounds = true
         
-        let labelTextField = ARCTextField()
+        let labelTextField = UITextField()
         view.addSubview(labelTextField)
         labelTextField.translatesAutoresizingMaskIntoConstraints = false
         labelTextField.topAnchor.constraint(equalTo: blur.topAnchor, constant: 5).isActive = true
@@ -183,5 +193,23 @@ extension CameraViewController {
     @objc private func labelTextFieldChanged(textField:UITextField) {
         guard let textFieldText = textField.text else { return }
         self.text = textFieldText
+    }
+}
+
+// MARK: Camera
+extension CameraViewController {
+    func takePhoto() {
+        defer {
+            UIGraphicsEndImageContext()
+        }
+        UIGraphicsBeginImageContext(sceneView.frame.size)
+        sceneView.drawHierarchy(in: sceneView.frame, afterScreenUpdates: true)
+        if let image = UIGraphicsGetImageFromCurrentImageContext() {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
+    }
+    
+    func runImageTakenAnimation() {
+        
     }
 }

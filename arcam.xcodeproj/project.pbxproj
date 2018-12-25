@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		041C2F6221CFD12000A1B9EF /* ARCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C2F6121CFD12000A1B9EF /* ARCTextField.swift */; };
+		046865B821D27D990002D994 /* CameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046865B721D27D990002D994 /* CameraButton.swift */; };
 		049F238F21CEA9ED00617FE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F238E21CEA9ED00617FE3 /* AppDelegate.swift */; };
 		049F239121CEA9ED00617FE3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F239021CEA9ED00617FE3 /* CameraViewController.swift */; };
 		049F239621CEA9EE00617FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049F239521CEA9EE00617FE3 /* Assets.xcassets */; };
@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		041C2F6121CFD12000A1B9EF /* ARCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCTextField.swift; sourceTree = "<group>"; };
+		046865B721D27D990002D994 /* CameraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButton.swift; sourceTree = "<group>"; };
 		049F238B21CEA9ED00617FE3 /* arcam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arcam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049F238E21CEA9ED00617FE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049F239021CEA9ED00617FE3 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 			children = (
 				049F238E21CEA9ED00617FE3 /* AppDelegate.swift */,
 				049F239021CEA9ED00617FE3 /* CameraViewController.swift */,
-				041C2F6121CFD12000A1B9EF /* ARCTextField.swift */,
+				046865B721D27D990002D994 /* CameraButton.swift */,
 				049F239521CEA9EE00617FE3 /* Assets.xcassets */,
 				049F239721CEA9EE00617FE3 /* LaunchScreen.storyboard */,
 				049F239A21CEA9EE00617FE3 /* Info.plist */,
@@ -135,8 +135,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				049F239121CEA9ED00617FE3 /* CameraViewController.swift in Sources */,
+				046865B821D27D990002D994 /* CameraButton.swift in Sources */,
 				049F238F21CEA9ED00617FE3 /* AppDelegate.swift in Sources */,
-				041C2F6221CFD12000A1B9EF /* ARCTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
