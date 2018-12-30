@@ -178,10 +178,10 @@ extension CameraViewController {
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 20, weight: .black)
         label.textAlignment = .center
-        label.minimumScaleFactor = 1
         label.shadowColor = .black
         label.shadowOffset = CGSize(width: 2, height: 2)
         label.text = self.text
+        label.adjustsFontSizeToFitWidth = true
         
         self.sceneView.addSubview(faceView)
         self.scanedFacesViews.append(faceView)
